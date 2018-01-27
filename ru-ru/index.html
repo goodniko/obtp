@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -74,7 +74,7 @@
             </p>
             <span>Качество</span>
             <p>
-                Длительное и стабильная работа с фабриками по производству ОЕМ-запчастей позволяет нам предоставлять качественный зип с конкурентноспособными
+                Длительная и стабильная работа с фабриками по производству ОЕМ-запчастей позволяет нам предоставлять качественный зип с конкурентноспособными
                 ценами и сроками для запчастей и необходимого оборудования.
             </p>
             <span>Доступность</span>
@@ -91,68 +91,86 @@
                 <p>Оборудование, которое может быть доставлено по Вашему запросу:</p>
                 <ul class="spares-list">
                     <li>производство изделий из метала и резины по Вашим чертежам
-                        <span>(муфты, механические сальники, шестерни и прочее)</span>
+                        <span>(муфты, механические сальники, шестерни и прочее).</span>
                     </li>
                     <li>запасные части для симплекса
                         <span>(мы работаем с заводами, производящими оригинальное и ОЕМ оборудование марок SKF, Wartsila, Ulstein,
-                            Waukesha и прочее)</span>
+                            Waukesha и прочее).</span>
                     </li>
                     <li>запасные части для главных и вспомагательных двигателей
                         <span>(мы работаем с заводами, производящими оригинальное и ОЕМ оборудование для большинства Европейских,
                             Китайских, Российских, Японских марок двигателей, таких как MAK, MAN, Sulzer, SKL, Daihatsu,
-                            Mitsui, CAT, Volvo, Yanmar, VM, Deutz, Wartsila и другие.)</span>
+                            Mitsui, CAT, Volvo, Yanmar, VM, Deutz, Wartsila и другие.).</span>
                     </li>
                     <li>запасные части для кранов
                         <span>(мы работаем с производителями высококачественных OEM-запчастей для деталей кранов Liebherr, TTS,
-                            IHI, SMAG)</span>
+                            IHI, SMAG).</span>
                     </li>
                     <li>запасные части для компрессоров, теплообменников и сепараторов
-                        <span>(мы поставляем широкий ассортимент запчастей для Sperre, Hatlapa, Alfa Laval, Westafila и других)</span>
+                        <span>(мы поставляем широкий ассортимент запчастей для Sperre, Hatlapa, Alfa Laval, Westafila и других).</span>
                     </li>
                     <li>запасные части для турбонагнетателей
                         <span>(мы можем предложить OEM-запчасти для ABB, VTR и многих других производителей T/C из Европы и Дальнего
-                            Востока)</span>
+                            Востока).</span>
                     </li>
                     <li>запасные части для насосов различного назначения и марок, в том числе IMO, Framo, Rexroth.
                     </li>
                     <li>двигатели, компрессора, насосы, сепараторы в сборе
-                        <span>(новые, б/у, пообсле капитального ремонта)</span>
+                        <span>(новые, б/у, пообсле капитального ремонта).</span>
                     </li>
                 </ul>
-
+                <p class="spares-coop">
+                        Если у Вас есть вопрос, отправьте его на наш адрес электронной почты.
+                        Надеемся на дальнейшее и хорошее сотрудничество!
+                </p>
+                
+            </div>
+            <div class="spares-img">
+                <img src="../img/pump.jpg">
+                <img src="../img/air-compressor.jpg">
+                <img src="../img/marine-engine.jpg">
+                <img src="../img/heat-exchanger.jpg">
             </div>
         </div>
     </section>
     <section id="logistics">
-        <div class="logistics-inner"></div>
+        <div class="logistics-inner">
+            <div class="logistics-title">Мы доставим Ваш заказ в <span>любую</span> точку мира </div>
+
+        </div>
     </section>
     <section id="contact">
         <div class="contact-inner">
             <div class="contact-title">Отправить заявку</div>
-            <form class="contact-form">
-
+            <form class="contact-form" enctype="multipart/form-data" action="../php/send-email.php" method="POST">
                     <label>
-                        <input id="name" type="text" name="name" placeholder="*Имя">
+                        <input id="name" type="text" name="name" placeholder="Имя">
                     </label>
                     <label>
-                        <input id="surname" type="text" name="surname" placeholder="*Фамилия">
+                        <input id="surname" type="text" name="surname" placeholder="Фамилия">
                     </label>
                     <label>
                         <input id="company" type="text" name="company" placeholder="Компания">
                     </label>
                     <label>
+                        <input id="phone" type="tel" name="phone" placeholder="*Телефон">
+                    </label>
+                    <label>
                         <input id="mail" type="email" name="email" placeholder="*Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                     </label>
                     <label>
-                        <input id="theme" type="text" name="theme" placeholder="*Тема">
+                        <input id="theme" type="text" name="theme" placeholder="Тема">
                     </label>
                     <label>
-                        <textarea id="text" type="text" name="text" placeholder="*Сообщение" maxlength="1000" rows="10"></textarea>
+                        <textarea id="text" type="text" name="text" placeholder="Сообщение" maxlength="1000" rows="10"></textarea>
                     </label>
-                    <label>
-                        <input id="file" name="file" type="file" multiple>
+                    <label class="form-btns">
+                        <div class="file-upload">
+                            <span>Выбрать файлы</span>
+                            <input id="file" name="file" type="file" multiple />
+                        </div>
+                        <button type="submit" id="send-mail" class="" value="Отправить">Отправить</button>
                     </label>
-                    <button type="submit" id="send-mail" class="" value="Отправить">Отправить</button>
             </form>
         </div>
     </section>

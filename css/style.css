@@ -22,16 +22,18 @@ input, textarea, label, button {
 
 }
 #home, #about-us, #spares, #logistics, #contact {
-
+    min-height: 100vh;
+    max-height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-#home, #about-us, #spares, #logistics, #contact {
-    min-height: 100vh;
-    max-height: auto;
+#about-us, #spares, #logistics, #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* ----- Home ----- */
@@ -55,9 +57,6 @@ input, textarea, label, button {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.nav .logo img {
-    width: 40px;
-}
 .nav ul {
     color: #fff;
     display: flex;
@@ -70,7 +69,6 @@ input, textarea, label, button {
 .nav a {
     margin: 1.5em 2.5em 1.5em 0 ;
     white-space: rpe;
-
 }
 .lang {
     font-size: 13px;
@@ -109,9 +107,7 @@ input, textarea, label, button {
     background-position: center; 
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
 }
 
 .about-us-inner,
@@ -159,9 +155,12 @@ input, textarea, label, button {
     font-weight: 500;
     font-size: 22px;
 }
+.spares-list {
+    -webkit-padding-start: 22px;
+}
 .spares-list li {
     list-style: none; 
-    text-indent: -1.6em;     
+    text-indent: -1.3em;     
     margin: 10px 0;
 }
 .spares-list li::before {
@@ -173,6 +172,23 @@ input, textarea, label, button {
 .spares-list span {
     color: rgb(87, 87, 87);
 }
+.spares-img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.spares-img img {
+    max-width: 150px;
+    min-width: auto;
+    margin: 10px;
+}
+
+.spares-text .spares-coop{
+    color: #2B495D;
+
+}
 
 /* ----- Logistics ----- */
 #logistics {
@@ -182,6 +198,17 @@ input, textarea, label, button {
     background-repeat: no-repeat;
 
 }
+.logistics-title {
+    color: #272C32;
+    font-size: 24px;
+    font-weight: 600;
+}
+.logistics-title span{
+    color: rgb(42, 75, 97);
+    text-transform: uppercase;
+
+}
+
 
 /* ----- Contact ----- */
 .contact-inner {
@@ -210,19 +237,61 @@ input, textarea, label, button {
     padding: 5px;
     width: 500px;
 }
-#text {
-    
-}
+
 #send-mail { 
     background: #2B495D;
     border: 0;
     color: #fff;
-    padding: 10px;
+    padding: 10px 28.5px;
     width: auto;
 
 }
 #send-mail:hover {
     cursor: pointer;
+}
+.form-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.file-upload { 
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    width: auto;
+}
+ 
+.file-upload span { 
+    cursor: pointer;
+    background-color: #2B495D;
+    border-radius: 0px;
+    color: #FFFFFF;
+    float: right;
+    font-size: 14px;
+    height: auto;
+    padding: 10px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+    
+}
+ 
+.file-upload #file{
+    position:absolute; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    -moz-opacity: 0; 
+    filter: alpha(opacity=0); 
+    opacity: 0; 
+    z-index:20;
+    height: 40px;
 }
 
 
@@ -237,17 +306,52 @@ input, textarea, label, button {
 }
 @media screen and (max-width: 550px) {
     body {
+        font-size: 13px;
+    }
+    .logo-text {
+      font-size: 16px; 
+      width: 80%;
+    }
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-img img {
+        width: 121px;
     }
     .contact-form label,
     .contact-form input,
     .contact-form textarea {
-        width: 100%;
+        max-width: 300px;
+        min-width: auto;
     }
-
+    .contact-form label {
+        margin: 10px 20px;
+    }
     .spares-inner,
     .about-us-inner {
         margin: 20px;
     }
+    .nav {
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+    }
+    .nav ul {
+        padding: 20px 5px;
+    }
+    .nav a {
+        margin: 1em 0.3em ;
+    }
+    .lang {
+        margin: 20px 5px 0 0px;
+    }
 
 }
-
+@media screen and (max-width: 720px) {
+    .spares-img img {
+        max-width: 280px;
+        min-width: auto;
+        margin: 10px 0;
+    }
+}
