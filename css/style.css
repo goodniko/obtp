@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    display: block;
+}
+ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+a:link,
+a:hover,
+a:active,
+a:visited {
+    color: #fff;
+    text-decoration: none;
+
+}
+input, textarea, label, button {
+    font: 400 14px 'Montserrat';
+    color: #2B495D;
+
+}
+#home, #about-us, #spares, #logistics, #contact {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#home, #about-us, #spares, #logistics, #contact {
+    min-height: 100vh;
+    max-height: auto;
+}
+
+/* ----- Home ----- */
+ #home{
+    background: #272C32;
+}
+
+.home-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.nav .logo img {
+    width: 40px;
+}
+.nav ul {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 30px 0;
+
+}
+.nav a {
+    margin: 1.5em 2.5em 1.5em 0 ;
+    white-space: rpe;
+
+}
+.lang {
+    font-size: 13px;
+    margin: 30px 0px 0 30px;
+}
+.logo-img {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+
+
+}
+.logo-text {
+    width: 300px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.communications {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.communications div {
+    padding: 20px 20px 20px 0;
+}
+
+/* ----- About Us ----- */
+#about-us {
+    background-image: url(../img/main-engine.jpg);
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-us-inner,
+.spares-inner, 
+.contact-inner {
+    max-width: 805px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+.about-us-inner {
+    margin: 20px 10px;
+}
+.about-us-inner a {
+    color: #272C32;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.about-us-inner span {
+    color: rgb(42, 75, 97);
+}
+.about-us-inner span:not(:first-child) {
+    color: rgb(42, 75, 97);
+    font-weight: 500;
+}
+.about-us-inner p {
+    text-align: justify;
+    margin: 3px 0 16px 0;
+}
+
+
+/* ----- Spares ----- */
+
+.spares-inner {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.spares-text :not(p) {
+    text-align: justify;   
+}
+.spares-text p {
+    font-weight: 500;
+    font-size: 22px;
+}
+.spares-list li {
+    list-style: none; 
+    text-indent: -1.6em;     
+    margin: 10px 0;
+}
+.spares-list li::before {
+    content: url(../img/gear1.png); 
+    padding-right: 7px; 
+    position: relative;
+    top: 3px;
+}
+.spares-list span {
+    color: rgb(87, 87, 87);
+}
+
+/* ----- Logistics ----- */
+#logistics {
+    background-image: url(../img/world-map.png);
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+/* ----- Contact ----- */
+.contact-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-title {
+    color: #2B495D;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 16px 0px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-form label {
+    margin: 10px;
+    width: 500px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 5px;
+    width: 500px;
+}
+#text {
+    
+}
+#send-mail { 
+    background: #2B495D;
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    width: auto;
+
+}
+#send-mail:hover {
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 1370px) {
+    .home-inner, 
+    .about-us-inner,
+    .spares-inner,
+    .logistics-inner,
+    .contact-inner {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 550px) {
+    body {
+    }
+    .contact-form label,
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+
+    .spares-inner,
+    .about-us-inner {
+        margin: 20px;
+    }
+
+}
+
