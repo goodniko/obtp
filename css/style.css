@@ -14,14 +14,12 @@ a:active,
 a:visited {
     color: #fff;
     text-decoration: none;
-
 }
 input, textarea, label, button {
     font: 400 14px 'Montserrat';
     color: #2B495D;
-
 }
-#home, #about-us, #spares, #logistics, #contact {
+#about-us, #spares, #logistics, #contact {
     min-height: 100vh;
     max-height: auto;
     width: 100%;
@@ -38,9 +36,11 @@ input, textarea, label, button {
 
 /* ----- Home ----- */
  #home{
+    min-height: 100vh;
+    max-height: auto;
+    width: 100%;
     background: #272C32;
 }
-
 .home-inner {
     width: 100%;
     height: 100%;
@@ -49,7 +49,6 @@ input, textarea, label, button {
     justify-content: space-between;
     align-items: center;
 }
-
 .nav {
     width: 100%;
     display: flex;
@@ -64,7 +63,6 @@ input, textarea, label, button {
     flex-wrap: wrap;
     list-style: none;
     padding: 30px 0;
-
 }
 .nav a {
     margin: 1.5em 2.5em 1.5em 0 ;
@@ -78,8 +76,6 @@ input, textarea, label, button {
     width: 100%;
     margin: 30px 0;
     text-align: center;
-
-
 }
 .logo-text {
     width: 300px;
@@ -88,17 +84,20 @@ input, textarea, label, button {
     line-height: 1.5;
     font-weight: 500;
     text-align: center;
-
 }
 
 .communications {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.communications a {
+    padding: 7px;
 }
 .communications div {
-    padding: 20px 20px 20px 0;
+    padding: 20px;
+    color: #fff;
 }
 
 /* ----- About Us ----- */
@@ -109,7 +108,6 @@ input, textarea, label, button {
     background-repeat: no-repeat;
 
 }
-
 .about-us-inner,
 .spares-inner, 
 .contact-inner {
@@ -124,7 +122,6 @@ input, textarea, label, button {
     color: #272C32;
     font-size: 24px;
     font-weight: 500;
-
 }
 .about-us-inner span {
     color: rgb(42, 75, 97);
@@ -184,29 +181,30 @@ input, textarea, label, button {
     min-width: auto;
     margin: 10px;
 }
-
 .spares-text .spares-coop{
     color: #2B495D;
-
 }
 
 /* ----- Logistics ----- */
 #logistics {
     background-image: url(../img/world-map.png);
     background-position: center; 
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-
+}
+.logistics-inner {
+    text-align: center;
 }
 .logistics-title {
     color: #272C32;
     font-size: 24px;
     font-weight: 600;
+    margin: 10px;
+    text-align: center;
 }
 .logistics-title span{
     color: rgb(42, 75, 97);
     text-transform: uppercase;
-
 }
 
 
@@ -237,14 +235,25 @@ input, textarea, label, button {
     padding: 5px;
     width: 500px;
 }
-
+.required-field {
+    position: relative;
+}
+.required-field::before{
+    content: '*';
+    font-size: 14px;
+    color: #2B495D;
+    position: absolute;
+    left: -10px;
+}
 #send-mail { 
     background: #2B495D;
     border: 0;
     color: #fff;
     padding: 10px 28.5px;
     width: auto;
-
+    display: flex;
+    flex-grow: 13;
+    justify-content: center;
 }
 #send-mail:hover {
     cursor: pointer;
@@ -253,9 +262,8 @@ input, textarea, label, button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    flex-wrap: wrap;
 }
-
 .file-upload { 
     cursor: pointer;
     overflow: hidden;
@@ -263,8 +271,9 @@ input, textarea, label, button {
     text-align: left;
     vertical-align: middle;
     width: auto;
+    display: flex;
+    flex-grow: 1;
 }
- 
 .file-upload span { 
     cursor: pointer;
     background-color: #2B495D;
@@ -273,28 +282,24 @@ input, textarea, label, button {
     float: right;
     font-size: 14px;
     height: auto;
-    padding: 10px;
+    padding: 10px 20px;
     line-height: 20px;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
-    width: auto;
-    
+    width: 110px;
 }
- 
 .file-upload #file{
     position:absolute; 
     top:0; 
     left:0; 
-    width:100%; 
+    width: 140px; 
     -moz-opacity: 0; 
     filter: alpha(opacity=0); 
     opacity: 0; 
     z-index:20;
     height: 40px;
 }
-
-
 @media screen and (min-width: 1370px) {
     .home-inner, 
     .about-us-inner,
@@ -304,9 +309,27 @@ input, textarea, label, button {
         width: 60%;
     }
 }
+@media screen and (max-width: 1366px) {
+    #logistics {
+        background-size: contain;
+    }
+}
 @media screen and (max-width: 550px) {
     body {
         font-size: 13px;
+    }
+    .home-inner, 
+    .about-us-inner,
+    .spares-inner,
+    .logistics-inner,
+    .contact-inner {
+        font-size: 13px; 
+    }
+    .spares-text p, 
+    .about-us-inner a, 
+    .logistics-title,
+    .contact-title {
+        font-size: 18px;
     }
     .logo-text {
       font-size: 16px; 
@@ -338,20 +361,52 @@ input, textarea, label, button {
         flex-wrap: nowrap;
     }
     .nav ul {
-        padding: 20px 5px;
+        padding: 10px 5px;
     }
     .nav a {
         margin: 1em 0.3em ;
     }
     .lang {
-        margin: 20px 5px 0 0px;
+        margin: 10px 5px 0 0px;
     }
-
+    .form-btns .file-upload,
+    .form-btns #send-mail,
+    .form-btns span {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .form-btns span {
+        padding: 10px 0px;
+        margin: 0;
+    }
+    .form-btns .file-upload {
+        margin-top: 0;
+    }
 }
 @media screen and (max-width: 720px) {
     .spares-img img {
         max-width: 280px;
         min-width: auto;
         margin: 10px 0;
+    }
+    .communications {
+        flex-direction: column;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .communications div {
+        padding: 3px;
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .communications a {
+        padding: 7px;
+    }
+    .communications .left-side {
+        font-size: 0.6rem;
+    }
+    #about-us, #spares, #contact {
+        min-height: auto;
+        justify-content: flex-start;
     }
 }

@@ -9,9 +9,9 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
 
-
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>OBTP Group - </title>
+    <title>OBTP Group</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 
             <nav class="nav">
                 <div class="lang">
-                    <a href="../ru-ru/index.html">ru</a>
+                    <a href="../ru/index.html">ru</a>
                 </div>
                 <ul>
                     <li>
@@ -49,13 +49,12 @@
 
             </div>
             <div class="communications">
-                <div class="address">
-                    <a href="mailto:ok@obtpgroup.com">ok@obtpgroup.com</a>
+                    <div class="left-side">101 Rose Street South Lane, Edinburgh, United Kingdom</div>
+                    <div class="right-side">
+                        <a href="mailto:ok@obtpgroup.com">ok@obtpgroup.com</a>
+                        <a href="tel:+380666978443">+38 066 697 84 43</a>
+                    </div>
                 </div>
-                <div class="phone">
-                    <a href="tel:+380939393393">+38 093 939 33 93</a>
-                </div>
-            </div>
         </div>
     </section>
     <section id="about-us">
@@ -141,21 +140,21 @@
                     <label>
                         <input id="company" type="text" name="company" placeholder="Company">
                     </label>
-                    <label>
-                        <input id="phone" type="tel" name="phone" placeholder="*Phone">
+                    <label class="required-field">
+                        <input id="phone" type="tel" name="phone" placeholder="Phone">
+                    </label>
+                    <label class="required-field">
+                        <input id="mail" type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                     </label>
                     <label>
-                        <input id="mail" type="email" name="email" placeholder="*Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                        <input id="theme" type="text" name="theme" placeholder="Theme">
                     </label>
                     <label>
-                        <input id="theme" type="text" name="theme" placeholder="*Theme">
-                    </label>
-                    <label>
-                        <textarea id="text" type="text" name="text" placeholder="*Message" maxlength="1000" rows="10"></textarea>
+                        <textarea id="text" type="text" name="text" placeholder="Message" maxlength="1000" rows="10"></textarea>
                     </label>
                     <label class="form-btns">
                         <div class="file-upload">
-                            <span>Select files</span>
+                            <span>Select file</span>
                             <input id="file" name="file" type="file" multiple />
                         </div>
                         <button type="submit" id="send-mail" class="" value="Send">Send</button>
