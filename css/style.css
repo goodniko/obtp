@@ -40,6 +40,9 @@ input, textarea, label, button {
     max-height: auto;
     width: 100%;
     background: #272C32;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .home-inner {
     width: 100%;
@@ -239,11 +242,10 @@ input, textarea, label, button {
     position: relative;
 }
 .required-field::before{
-    content: '*';
-    font-size: 14px;
-    color: #2B495D;
+    content: url('../img/gear.svg');
     position: absolute;
-    left: -10px;
+    left: -16px;
+    top: 9px;
 }
 #send-mail { 
     background: #2B495D;
@@ -309,9 +311,10 @@ input, textarea, label, button {
         width: 60%;
     }
 }
-@media screen and (max-width: 1366px) {
+
+@media screen and (max-width: 1240px) {
     #logistics {
-        background-size: contain;
+        background-size: cover;
     }
 }
 @media screen and (max-width: 550px) {
