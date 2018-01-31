@@ -17,13 +17,13 @@ if($_POST)
     $sender_text    = filter_var($_POST["text"], FILTER_SANITIZE_STRING); //sender text
     $subject        = 'OBTP - Заявка'; //get subject from HTML form
     
-    $message =  $sender_name. " <br/>".
-                $sender_surname. " <br/>".
-                $sender_company. " <br/>".
-                $sender_mail. " <br/>".
-                $sender_phone. " <br/>".
-                $sender_theme. " <br/>".
-                $sender_text. " <br/>".
+    $message = "<b>Name:<b> ". $sender_name. " <br/>".
+               "<b>Surname:<b> ".$sender_surname. " <br/>".
+               "<b>Company:<b> ".$sender_company. " <br/>".
+               "<b>Mail:<b> ".$sender_mail. " <br/>".
+               "<b>Phone:<b> ".$sender_phone. " <br/>".
+               "<b>Subject:<b> ".$sender_theme. " <br/>".
+               "<b>Text:<b> ".$sender_text. " <br/>".
     
     //Get uploaded file data
     $file_tmp_name    = $_FILES['file']['tmp_name'];
@@ -43,7 +43,7 @@ if($_POST)
     
     //plain text 
     $body = "--$boundary\r\n";
-    $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
+    $body .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
     $body .= chunk_split(base64_encode($message)); 
 
