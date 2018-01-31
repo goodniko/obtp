@@ -8,6 +8,7 @@
     <script src="../js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 
     <link rel="icon" type="image/vnd.microsoft.icon" href="../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -62,24 +63,19 @@
             <h1><a href="#home" class="menu-link">OBTP <span>Group</span></a></h1>
             <span>Надежность</span>
             <p>
-                Надёжный поставщик оборудования для судовых механизмов с опытом более 10 лет в сфере
-                поставки запчастей. Для наших клиентов мы предоставляем широкий выбор продукции высокого качества, которая
-                не будет превышать запланированный Вами бюджет на ремонт.
+                Надёжный поставщик оборудования для судовых механизмов с опытом более 10 лет в сфере поставки запчастей. Для наших клиентов мы предоставляем широкий выбор продукции высокого качества, которая не будет превышать запланированный Вами бюджет на ремонт.
             </p>
             <span>Вариативность</span>
             <p>
-                Наша компания может предложить альтернативные варианты для большого перечня двигателей, сепараторов, компрессоров, турбонагнетателей,
-                симплекса, насосов и прочего оборудования Европейского и Дальневосточного производства.
+                Наша компания может предложить альтернативные варианты для большого перечня двигателей, сепараторов, компрессоров, турбонагнетателей, симплекса, насосов и прочего оборудования Европейского и Дальневосточного производства.
             </p>
             <span>Качество</span>
             <p>
-                Длительная и стабильная работа с фабриками по производству ОЕМ-запчастей позволяет нам предоставлять качественный зип с конкурентноспособными
-                ценами и сроками для запчастей и необходимого оборудования.
+                Длительная и стабильная работа с фабриками по производству ОЕМ-запчастей позволяет нам предоставлять качественный зип с конкурентноспособными ценами и сроками для запчастей и необходимого оборудования.
             </p>
             <span>Доступность</span>
             <p>
-                Так же наше компания имеет специалистов в логистике, которые помогут доставить груз в любую точку мира, любом таможенном
-                режиме, либо прямо на руки заказчику.
+                Так же наше компания имеет специалистов в логистике, которые помогут доставить груз в любую точку мира, любом таможенном режиме, либо прямо на руки заказчику.
             </p>
 
         </div>
@@ -119,10 +115,9 @@
                     </li>
                 </ul>
                 <p class="spares-coop">
-                        Если у Вас есть вопрос, отправьте его на наш адрес электронной почты.
-                        Надеемся на дальнейшее и хорошее сотрудничество!
+                    Если у Вас есть вопрос, отправьте его на наш адрес электронной почты. Надеемся на дальнейшее и хорошее сотрудничество!
                 </p>
-                
+
             </div>
             <div class="spares-img">
                 <img src="../img/pump.jpg">
@@ -142,33 +137,33 @@
         <div class="contact-inner">
             <div class="contact-title">Отправить заявку</div>
             <form class="contact-form" enctype="multipart/form-data" action="../php/send-email.php" method="POST">
-                    <label>
+                <label>
                         <input id="name" type="text" name="name" placeholder="Имя">
                     </label>
-                    <label>
+                <label>
                         <input id="surname" type="text" name="surname" placeholder="Фамилия">
                     </label>
-                    <label>
+                <label>
                         <input id="company" type="text" name="company" placeholder="Компания">
                     </label>
-                    <label class="required-field">
-                        <input id="phone" type="tel" name="phone" placeholder="Телефон">
+                <label class="required-field">
+                        <input id="phone" type="tel" name="phone" placeholder="Телефон" required>
                     </label>
-                    <label class="required-field">
-                        <input id="mail" type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <label class="required-field">
+                        <input id="mail" type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                     </label>
-                    <label>
+                <label>
                         <input id="theme" type="text" name="theme" placeholder="Тема">
                     </label>
-                    <label>
+                <label>
                         <textarea id="text" type="text" name="text" placeholder="Сообщение" maxlength="1000" rows="10"></textarea>
                     </label>
-                    <label class="form-btns">
+                <label class="form-btns">
                         <div class="file-upload">
                             <span>Выбрать файл</span>
                             <input id="file" name="file" type="file" />
                         </div>
-                        <button type="submit" id="send-mail" class="" value="Отправить">Отправить</button>
+                        <button type="button" id="send-mail" class="" value="Отправить">Отправить</button>
                     </label>
             </form>
         </div>
@@ -177,3 +172,20 @@
 </body>
 
 </html>
+
+<script>
+    $('#send-mail').click(function() {
+        var valid = $(".contact-form").valid();
+
+        if (valid) {
+            $.ajax({
+                url: $('.contact-form').attr('action'),
+                type: 'POST',
+                data: $('.contact-form').serialize(),
+                success: function(data) {
+                    swal(data, "", "success");
+                }
+            });
+        }
+    });
+</script>

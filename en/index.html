@@ -8,6 +8,7 @@
     <script src="../js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 
     <link rel="icon" type="image/vnd.microsoft.icon" href="../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -49,12 +50,12 @@
 
             </div>
             <div class="communications">
-                    <div class="left-side">101 Rose Street South Lane, Edinburgh, United Kingdom</div>
-                    <div class="right-side">
-                        <a href="mailto:ok@obtpgroup.com">ok@obtpgroup.com</a>
-                        <a href="tel:+380666978443">+38 066 697 84 43</a>
-                    </div>
+                <div class="left-side">101 Rose Street South Lane, Edinburgh, United Kingdom</div>
+                <div class="right-side">
+                    <a href="mailto:ok@obtpgroup.com">ok@obtpgroup.com</a>
+                    <a href="tel:+380666978443">+38 066 697 84 43</a>
                 </div>
+            </div>
         </div>
     </section>
     <section id="about-us">
@@ -62,19 +63,19 @@
             <h1><a href="#home" class="menu-link">OBTP <span>Group</span></a></h1>
             <span>Reliability</span>
             <p>
-                    The OBTP Group is a reliable supplier of engine components with experience more than 10 years in spare part's business. For our customers we offer a wide and comprehensive range of top quality products which will meet with planning budget for ship's equipment.
+                The OBTP Group is a reliable supplier of engine components with experience more than 10 years in spare part's business. For our customers we offer a wide and comprehensive range of top quality products which will meet with planning budget for ship's equipment.
             </p>
             <span>Alternativity</span>
             <p>
-                    Our company could offer alternative solutions for big range of engines, separatores, compressors, turbochargers, simplex, pumps and etc. European and Far East makers.
+                Our company could offer alternative solutions for big range of engines, separatores, compressors, turbochargers, simplex, pumps and etc. European and Far East makers.
             </p>
             <span>Quality</span>
             <p>
-                    Long and good cooperation with OEM* factories make us possible to give competitive prices and terms for parts and complete units.
+                Long and good cooperation with OEM* factories make us possible to give competitive prices and terms for parts and complete units.
             </p>
             <span>Availability</span>
             <p>
-                    Our company also has logistic department, who can help to deliver spare part to any distanation point in any customs regime or direct to your hands.
+                Our company also has logistic department, who can help to deliver spare part to any distanation point in any customs regime or direct to your hands.
             </p>
 
         </div>
@@ -84,34 +85,33 @@
             <div class="spares-text">
                 <p>Equipment that can be delivered at your request:</p>
                 <ul class="spares-list">
-                    <li>manufacturing of rubber equipment as per your drawings in short time with very high quality materials 
+                    <li>manufacturing of rubber equipment as per your drawings in short time with very high quality materials
                         <span>(rings, couplings, mechanical seals and etc.).</span>
                     </li>
-                    <li>spare parts for simplex 
+                    <li>spare parts for simplex
                         <span>(we work with genuine and OEM factories for such makers as SKF, Wartsila, Ulstein, Waukesha and etc.).</span>
                     </li>
-                    <li>spare parts for marine main and auxiliary engines 
+                    <li>spare parts for marine main and auxiliary engines
                         <span>(we work with genuine and OEM factories for wide range of European, Chinese, Russian, Japanese engines, such as MAK, MAN, Sulzer, SKL, Daihatsu, Mitsui, CAT, Volvo, Yanmar, VM, Deutz, Wartsila and etc.)</span>
                     </li>
-                    <li>spare parts for crane 
+                    <li>spare parts for crane
                         <span>(we work with high quality OEM makers for Liebherr, TTS, IHI, SMAG crane parts).</span>
                     </li>
-                    <li>spare parts for compressors, heatexchangers and separators 
+                    <li>spare parts for compressors, heatexchangers and separators
                         <span>(we supply wide range of OEM parts for Sperre, Hatlapa, Alfa Laval, Westafila and etc.).</span>
                     </li>
-                    <li>turbocharger parts 
+                    <li>turbocharger parts
                         <span>(we can offer OEM parts for ABB, VTR and many other T/C maker from Europe and Far East).</span>
                     </li>
                     <li>wide range of spare parts for pumps such as IMO, Framo, Rexroth and etc.
                     </li>
-                    <li>complete engines, compressors, pumps, separators 
+                    <li>complete engines, compressors, pumps, separators
                         <span>(nes, use, overhauled/rebuilded).</span>
                     </li>
                 </ul>
-                <p class="spares-coop">If you have any open request, please send it to our e-mail address and you can check our working abilities.
-                        Hope fo our further and good cooperation!
+                <p class="spares-coop">If you have any open request, please send it to our e-mail address and you can check our working abilities. Hope fo our further and good cooperation!
                 </p>
-                
+
             </div>
             <div class="spares-img">
                 <img src="../img/pump.jpg">
@@ -131,33 +131,33 @@
         <div class="contact-inner">
             <div class="contact-title">Send a request</div>
             <form class="contact-form" enctype="multipart/form-data" action="../php/send-email.php" method="POST">
-                    <label>
+                <label>
                         <input id="name" type="text" name="name" placeholder="Name">
                     </label>
-                    <label>
+                <label>
                         <input id="surname" type="text" name="surname" placeholder="Surname">
                     </label>
-                    <label>
+                <label>
                         <input id="company" type="text" name="company" placeholder="Company">
                     </label>
-                    <label class="required-field">
-                        <input id="phone" type="tel" name="phone" placeholder="Phone">
+                <label class="required-field">
+                        <input id="phone" type="tel" name="phone" placeholder="Phone" required>
                     </label>
-                    <label class="required-field">
-                        <input id="mail" type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <label class="required-field">
+                        <input id="mail" type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                     </label>
-                    <label>
+                <label>
                         <input id="theme" type="text" name="theme" placeholder="Theme">
                     </label>
-                    <label>
+                <label>
                         <textarea id="text" type="text" name="text" placeholder="Message" maxlength="1000" rows="10"></textarea>
                     </label>
-                    <label class="form-btns">
+                <label class="form-btns">
                         <div class="file-upload">
                             <span>Select file</span>
                             <input id="file" name="file" type="file" />
                         </div>
-                        <button type="submit" id="send-mail" class="" value="Send">Send</button>
+                        <button type="button" id="send-mail" class="" value="Send">Send</button>
                     </label>
             </form>
         </div>
@@ -166,3 +166,21 @@
 </body>
 
 </html>
+
+
+<script>
+    $('#send-mail').click(function() {
+        var valid = $(".contact-form").valid();
+
+        if (valid) {
+            $.ajax({
+                url: $('.contact-form').attr('action'),
+                type: 'POST',
+                data: $('.contact-form').serialize(),
+                success: function(data) {
+                    swal(data, "", "success");
+                }
+            });
+        }
+    });
+</script>
