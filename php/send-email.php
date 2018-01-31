@@ -5,7 +5,7 @@ if($_POST)
     $from_email         = 'information@obtpgroup.com'; //from mail, it is mandatory with some hosts
     $reply_to_email = 'information@obtpgroup.com'; //sender email used in "reply-to" header
 
-    $recipient_email    = 'gooodniko@gmail.com'; //recipient email (most cases it is your personal email)
+    $recipient_email    = 'info@obtpgroup.com'; //recipient email (most cases it is your personal email)
     
     //Capture POST data from HTML form and Sanitize them, 
     $sender_name    = filter_var($_POST["name"], FILTER_SANITIZE_STRING); //sender name
@@ -17,13 +17,13 @@ if($_POST)
     $sender_text    = filter_var($_POST["text"], FILTER_SANITIZE_STRING); //sender text
     $subject        = 'OBTP - Заявка'; //get subject from HTML form
     
-    $message = "<b>Name:<b> ". $sender_name. " <br/>".
-               "<b>Surname:<b> ".$sender_surname. " <br/>".
-               "<b>Company:<b> ".$sender_company. " <br/>".
-               "<b>Mail:<b> ".$sender_mail. " <br/>".
-               "<b>Phone:<b> ".$sender_phone. " <br/>".
-               "<b>Subject:<b> ".$sender_theme. " <br/>".
-               "<b>Text:<b> ".$sender_text. " <br/>".
+    $message = "<b>Name:</b> ". $sender_name. " <br/>".
+               "<b>Surname:</b> ".$sender_surname. " <br/>".
+               "<b>Company:</b> ".$sender_company. " <br/>".
+               "<b>Mail:</b> ".$sender_mail. " <br/>".
+               "<b>Phone:</b> ".$sender_phone. " <br/>".
+               "<b>Subject:</b> ".$sender_theme. " <br/>".
+               "<b>Text:</b> ".$sender_text. " <br/>".
     
     //Get uploaded file data
     $file_tmp_name    = $_FILES['file']['tmp_name'];
