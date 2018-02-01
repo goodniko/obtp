@@ -53,7 +53,7 @@
                 <div class="left-side">101 Rose Street South Lane, Edinburgh, United Kingdom</div>
                 <div class="right-side">
                     <a href="mailto:ok@obtpgroup.com">ok@obtpgroup.com</a>
-                    <a href="tel:+380666978443">+38 066 697 84 43</a>
+                    <!-- <a href="tel:+380666978443">+38 066 697 84 43</a> -->
                 </div>
             </div>
         </div>
@@ -178,7 +178,7 @@
                 type: 'POST',
                 data: $('.contact-form').serialize(),
                 success: function(data) {
-                    swal(data, "", "success");
+                    swal("", data, "success");
                 }
             });
         }
