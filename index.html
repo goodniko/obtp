@@ -1,1 +1,9 @@
-<meta http-equiv="refresh" content="0; URL='./en/index.html'" />
+<!-- <meta http-equiv="refresh" content="0; URL='./en/index.html'" /> -->
+<script>
+    var userLang = navigator.language || navigator.userLanguage;
+    if (userLang == "ru") {
+        window.location.href = "./ru/index.html";
+    } else {
+        window.location.href = "./en/index.html";
+    }
+</script>
