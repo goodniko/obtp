@@ -33,6 +33,7 @@ input, textarea, label, button {
     justify-content: center;
 }
 
+
 /* ----- Home ----- */
  #home{
     min-height: 100%;
@@ -52,6 +53,26 @@ input, textarea, label, button {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+#languages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-top: -20px;
+}
+#languages a {
+    margin: -2px 7px 0;
+} 
+#languages #ru, 
+#languages #en {
+    font-size: 16px;
+    font-weight: 400;
+}
+#ru-flag {
+    height: 56px;
+
 }
 .nav {
     width: 100%;
