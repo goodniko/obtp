@@ -175,18 +175,27 @@
 </html>
 
 <script>
-    $('#send-mail').click(function() {
-        var valid = $(".contact-form").valid();
+    $(document).ready(function() {
+        $('#send-mail').click(function() {
+            var valid = $(".contact-form").valid();
 
-        if (valid) {
-            $.ajax({
-                url: $('.contact-form').attr('action'),
-                type: 'POST',
-                data: $('.contact-form').serialize(),
-                success: function(data) {
-                    swal("", data, "success");
-                }
+            if (valid) {
+                $.ajax({
+                    url: $('.contact-form').attr('action'),
+                    type: 'POST',
+                    data: $('.contact-form').serialize(),
+                    success: function(data) {
+                        swal("", data, "success");
+                    }
+                });
+            }
+        });
+
+        $('#en').on('click', function() {
+            $.cookie('language', "en", {
+                expires: 365,
+                path: '/obtp'
             });
-        }
-    });
+        });
+    })
 </script>

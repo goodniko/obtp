@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,900" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
-    <link rel="icon" type="image/vnd.microsoft.icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>OBTP Group</title>
 </head>
 
+<script>
+    var language = $.cookie('language');
+
+    if (language == "ru") {
+        window.location.href = "./ru/index.html";
+    } else if (language == "en") {
+        window.location.href = "./en/index.html";
+    }
+</script>
 
 <body>
     <section id="home">
         <div class="home-inner" style="justify-content:center;">
             <div class="logo">
                 <div class="logo-img">
-                    <img src="../img/logo-light.png" width="120px">
+                    <img src="./img/logo-light.png" width="120px">
                 </div>
                 <div class="logo-text">
                     <div id="languages">
-                        <a href="../en/index.html" id="en">
+                        <a href="./en/index.html" id="en">
                             en 
-                        </a>
-                        |                        
-                        <a href="../ru/index.html" id="ru">
+                        </a> |
+                        <a href="./ru/index.html" id="ru">
                             ru
                         </a>
                     </div>
@@ -40,38 +46,26 @@
         </div>
     </section>
 
-
     <!-- <meta http-equiv="refresh" content="0; URL='./en/index.html'" /> -->
-    <script>
 
-        $(function () {
-            var language = $.cookie('language');
-            
-            $('#ru').on('click', function () {
-                language = "ru";
-                $.cookie('language', language, { expires: 365 });
-            })
-            $('#en').on('click', function () {
-                language = "en";
-                $.cookie('language', language,  { expires: 365 });
-            })
 
-            //console.log(language);
-
-            if (language == "ru") {
-                window.location.href = "./ru/index.html";
-            } else {
-                window.location.href = "./en/index.html";
-            }
-        });
-    // var userLang = navigator.language || navigator.userLanguage;
-    // if (userLang == "ru") {
-    //     window.location.href = "./ru/index.html";
-    // } else {
-    //     window.location.href = "./en/index.html";
-    // }
-    </script>
 
 </body>
+
+<script>
+    $(document).ready(function() {
+        $('#ru').on('click', function() {
+            $.cookie('language', "ru", {
+                expires: 365
+            });
+        });
+
+        $('#en').on('click', function() {
+            $.cookie('language', "en", {
+                expires: 365
+            });
+        });
+    })
+</script>
 
 </html>

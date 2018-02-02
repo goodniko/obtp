@@ -170,18 +170,29 @@
 
 
 <script>
-    $('#send-mail').click(function() {
-        var valid = $(".contact-form").valid();
+    $(document).ready(function() {
 
-        if (valid) {
-            $.ajax({
-                url: $('.contact-form').attr('action'),
-                type: 'POST',
-                data: $('.contact-form').serialize(),
-                success: function(data) {
-                    swal("", data, "success");
-                }
+        $('#send-mail').click(function() {
+            var valid = $(".contact-form").valid();
+
+            if (valid) {
+                $.ajax({
+                    url: $('.contact-form').attr('action'),
+                    type: 'POST',
+                    data: $('.contact-form').serialize(),
+                    success: function(data) {
+                        swal("", data, "success");
+                    }
+                });
+            }
+        });
+
+        $('#ru').on('click', function() {
+            $.cookie('language', "ru", {
+                expires: 365,
+                path: '/obtp'
             });
-        }
-    });
+        });
+
+    })
 </script>
